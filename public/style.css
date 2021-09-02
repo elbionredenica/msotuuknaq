@@ -1,0 +1,34 @@
+.firebaseui-idp-button {
+    background-color: rgba(105, 78, 82, 0.932) !important;
+    color: white;
+    justify-content: center;
+    align-items: center;
+} 
+
+.firebaseui-idp-text-long {
+    content: "Hello" !important;
+}
+
+.firebaseui-tospp-full-message {
+    display: none !important;
+}
+
+#firebaseui-auth-container {
+    padding-bottom: 0px !important;
+}
+
+.guestBtn {
+    text-align: center !important;
+}
+
+h1 {
+    color: #333;
+    font-size: 50px;
+}
+
+h3 {
+    color: #333;
+    font-size: 25px;
+    margin: 25px;
+    padding: 0
+}

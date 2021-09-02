@@ -1,0 +1,128 @@
+body {
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+    margin: 0;
+    padding: 0
+}
+
+.form-field {
+    text-align: center;
+}
+
+#title{
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+#label{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+#host{
+    color: white;
+    text-decoration: none;
+}
+#host:hover{
+    text-decoration:underline;
+}
+#joinButton{
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
+    background-color: #3A3B3A;
+    font-family: 'Raleway', sans-serif;
+}
+
+.maindiv {
+    width: 1920px;
+    height: 1080px;
+    margin: 0%;
+    padding: 0%;
+    display: block;
+    justify-content: center;
+}
+.topdiv {
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    justify-content: center;
+}
+.bottomdiv {
+    width: 100%;
+    height: 100%;
+    background-color: #134e9e;
+    justify-content: center;
+}
+input {
+    width: 550px;
+    height: 60px;
+    background-color: white;
+    border: 1px solid rgb(172, 172, 172);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    text-align: center;
+    font-size: 20px;
+    transition: 0.4s;
+}
+input:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px 0 rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+.button {
+    background-color: white;
+    border: 1px solid white;
+    color: #134e9e;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 16px;
+    padding: 14px 56px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    transition: all 0.2s ease-out;
+  }
+  .button:hover {
+    background: white;
+    color:  #134e9e;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px 0 rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+  p {
+    position: absolute;
+    bottom: 0;
+  }
+
+  /* loginpage */
+
+  .blankpart {
+      width: 100%;
+      height: 20%;
+  }
+  .loginbackground {
+    width: 100%;
+    height: 80%;
+    background-color: pink;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
