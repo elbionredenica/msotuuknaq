@@ -173,6 +173,7 @@ io.on('connection', (socket) => {
     
     //When a host or player leaves the site
     socket.on('disconnect', () => {
+        
         var game = games.getGame(socket.id); //Finding game with socket.id
         //If a game hosted by that id is found, the socket disconnected is a host
         if(game){
@@ -428,11 +429,13 @@ io.on('connection', (socket) => {
                             num4: fourth.name,
                             num5: fifth.name
                         });
+                        db.db("kahootDB").collection('kahootGames').removeMany()
                     }
+                    
                     
                 });
                 console.log(">>>")
-                db.db("kahootDB").collection('kahootGames').removeMany()
+                
             });
         
         io.to(game.pin).emit('nextQuestionPlayer');
@@ -443,6 +446,7 @@ io.on('connection', (socket) => {
         var game = games.getGame(socket.id);//Get the game based on socket.id
         game.gameLive = true;
         socket.emit('gameStarted', game.hostId);//Tell player and host that game has started
+        
     });
     
     //Give user game names data
@@ -450,13 +454,13 @@ io.on('connection', (socket) => {
         
         MongoClient.connect(url, function(err, db){
             if (err) throw err;
-    
             var dbo = db.db('kahootDB');
             dbo.collection("kahootGames").find().toArray(function(err, res) {
                 if (err) throw err;
                 socket.emit('gameNamesData', res);
                 db.close();
             });
+
         });
         
          
@@ -466,6 +470,7 @@ io.on('connection', (socket) => {
     socket.on('newQuiz', function(data){
         MongoClient.connect(url, function(err, db){
             if (err) throw err;
+            
             var dbo = db.db('kahootDB');
             dbo.collection('kahootGames').find({}).toArray(function(err, result){
                 if(err) throw err;
