@@ -11,7 +11,7 @@ const {Players} = require('./utils/players');
 const publicPath = path.join(__dirname, '../public');
 var app = express();
 var server = http.createServer(app);
-var io = socketIO("https://msotuuknaq.herokuapp.com/");
+var io = socketIO(server);
 var games = new LiveGames();
 var players = new Players();
 
