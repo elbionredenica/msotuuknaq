@@ -11,6 +11,7 @@ socket.on('connect', function() {
     
     //Tell server that it is host connection from game view
     socket.emit('host-join-game', params);
+    document.getElementById('back').style.display = "none";
 });
 
 socket.on('noGameFound', function(){
@@ -143,9 +144,9 @@ socket.on('GameOver', function(data){
     document.getElementById('answer3').style.display = "none";
     document.getElementById('answer4').style.display = "none";
     document.getElementById('timerText').innerHTML = "";
-    document.getElementById('question').innerHTML = "GAME OVER";
+    document.getElementById('question').innerHTML = "LOJA PËRFUNDOI!";
     document.getElementById('playersAnswered').innerHTML = "";
-    
+    document.getElementById('questionNum').style.display = "none";
     
     
     document.getElementById('winner1').style.display = "block";
@@ -154,7 +155,8 @@ socket.on('GameOver', function(data){
     document.getElementById('winner4').style.display = "block";
     document.getElementById('winner5').style.display = "block";
     document.getElementById('winnerTitle').style.display = "block";
-    
+    document.getElementById('back').style.display = "block";
+
     document.getElementById('winner1').innerHTML = "1. " + data.num1;
     document.getElementById('winner2').innerHTML = "2. " + data.num2;
     document.getElementById('winner3').innerHTML = "3. " + data.num3;

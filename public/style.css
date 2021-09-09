@@ -1,12 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+* {
+    font-family: 'Bubblegum Sans', cursive;
+}
+
 .firebaseui-idp-button {
-    background-color: rgba(105, 78, 82, 0.932) !important;
-    color: white;
+    font-family: 'Bubblegum Sans', cursive;
+    color: white !important;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 60px;
     justify-content: center;
     align-items: center;
-} 
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px 0 rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+
+.firebaseui-idp-phone {
+    background-color: #45a3e5 !important;
+}
+
+.firebaseui-idp-password {
+    background-color: #eb670f !important;
+}
 
 .firebaseui-idp-text-long {
     content: "Hello" !important;
+    font-size: 20px;
+    color: white !important;
 }
 
 .firebaseui-tospp-full-message {
@@ -19,15 +42,17 @@
 
 .guestBtn {
     text-align: center !important;
+    background-color: #66bf39 !important;
+    text-transform: none !important;
 }
 
 h1 {
-    color: #333;
+    color: white;
     font-size: 50px;
 }
 
 h3 {
-    color: #333;
+    color: #134e9e;
     font-size: 25px;
     margin: 25px;
     padding: 0

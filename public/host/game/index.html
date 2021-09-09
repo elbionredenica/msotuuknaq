@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Game | KahootClone</title>
+        <title>Mso tu u knaq</title>
         <link rel = "stylesheet" href = "../../css/hostGameView.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
     </head>
     <body>
-        <h4 id = "questionNum">Question 1 / x</h4>
-        <h4 id = "playersAnswered">Players Answered: 0 / x</h4>
-        <h3 id = "timerText">Time Left:<span id = "num"> 20</span></h3>
+        <a id = "back"href = "../../game/"><i class="fas fa-arrow-alt-circle-left"></i></a>
+        <div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
+        <h4 id = "questionNum">Pyetja 1 / x</h4>
+        <h4 id = "playersAnswered">Të përgjigjur: 0 / x</h4>
+        <h3 id = "timerText">Koha e mbetur:<span id = "num"> 20</span></h3>
         
         
         <div class = "square" id = "square1"></div>
@@ -17,19 +21,19 @@
         <div class = "square" id = "square3"></div>
         <div class = "square" id = "square4"></div>
         
-        <h2 id = "question">Question</h2>
-        <h3 id = "answer1">Answer</h3>
+        <h2 id = "question">Pyetja</h2>
+        <h3 id = "answer1">Përgjigja</h3>
         <br>
-        <h3 id = "answer2">Answer</h3>
+        <h3 id = "answer2">Përgjigja</h3>
         <br>
-        <h3 id = "answer3">Answer</h3>
+        <h3 id = "answer3">Përgjigja</h3>
         <br>
-        <h3 id = "answer4">Answer</h3>
+        <h3 id = "answer4">Përgjigja</h3>
         
         <br>
-        <button onclick = "nextQuestion()" id = "nextQButton">Next Question</button>
+        <button onclick = "nextQuestion()" id = "nextQButton">Pyetja tjetër</button>
         
-        <h2 id = "winnerTitle">Top 5 Players</h4>
+        <h2 id = "winnerTitle">Top 5 Lojtarët</h4>
         <h3 id = "winner1">1.</h3>
         <h3 id = "winner2">2.</h3>
         <h3 id = "winner3">3.</h3>
@@ -40,5 +44,23 @@
         <script src = "../../js/libs/jqueryLibrary.js"></script>
         <script src = "../../js/libs/deparam.js"></script>
         <script src = "../../js/hostGame.js"></script>
+        <script src="../../js/libs/particles.js"></script>
+        <script>
+            
+            particlesJS.load('particles-js', '../../js/libs/particlesjs-config.json', function() {
+                console.log('callback - particles.js config loaded');
+            });
+
+            let touran = "hello";
+
+            $("#name").on("change paste keyup cut select", function() {
+                touran = $(this).val();
+                console.log(touran)
+            })
+            
+            
+
+            
+        </script>
     </body>
 </html>

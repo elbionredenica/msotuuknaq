@@ -10,13 +10,17 @@ if (user !== null) {
   console.log(displayName, phone, uid);
   var temp_nickname = 'Guest' + Math.floor(Math.random()*90000) + randomFromUid[27] + randomFromUid[7];
   console.log(uid)
-
+  
     if (displayName !== null) {
       document.getElementById('name').value = displayName;
+      document.getElementById('host').innerHTML = 'Krijoni kuizin tuaj!';
     } else if (phone !== null) {
       document.getElementById('name').value = phone;
+      document.getElementById('host').innerHTML = 'Krijoni kuizin tuaj!';
     } else {
+      document.getElementById('host').innerHTML = '';
       document.getElementById('name').value = temp_nickname;
+      
     }
     
   // The user's ID, unique to the Firebase project. Do NOT use
@@ -24,6 +28,8 @@ if (user !== null) {
 
 }
   });
+
+  
 
 function logOut() {
     firebase.auth().signOut().then(() => {

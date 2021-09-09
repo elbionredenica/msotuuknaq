@@ -29,42 +29,54 @@ function addQuestion(){
     var questionLabel = document.createElement('label');
     var questionField = document.createElement('input');
     
-    var answer1Label = document.createElement('label');
+    // var answer1Label = document.createElement('label');
     var answer1Field = document.createElement('input');
     
-    var answer2Label = document.createElement('label');
+    // var answer2Label = document.createElement('label');
     var answer2Field = document.createElement('input');
     
-    var answer3Label = document.createElement('label');
+    //  var answer3Label = document.createElement('label');
     var answer3Field = document.createElement('input');
     
-    var answer4Label = document.createElement('label');
+    // var answer4Label = document.createElement('label');
     var answer4Field = document.createElement('input');
     
     var correctLabel = document.createElement('label');
     var correctField = document.createElement('input');
     
-    questionLabel.innerHTML = "Question " + String(questionNum) + ": ";
+    // questionLabel.innerHTML = "Question " + String(questionNum) + ": ";
     questionField.setAttribute('class', 'question');
     questionField.setAttribute('id', 'q' + String(questionNum));
     questionField.setAttribute('type', 'text');
+    questionField.setAttribute('placeholder', 'Shkruaj pyetjen ' + String(questionNum));
     
-    answer1Label.innerHTML = "Answer 1: ";
-    answer2Label.innerHTML = " Answer 2: ";
-    answer3Label.innerHTML = "Answer 3: ";
-    answer4Label.innerHTML = " Answer 4: ";
+    // answer1Label.innerHTML = "Answer 1: ";
+    // answer2Label.innerHTML = " Answer 2: ";
+    // answer3Label.innerHTML = "Answer 3: ";
+    // answer4Label.innerHTML = " Answer 4: ";
     correctLabel.innerHTML = "Correct Answer (1-4): ";
     
     answer1Field.setAttribute('id', String(questionNum) + "a1");
     answer1Field.setAttribute('type', 'text');
+    answer1Field.setAttribute('class', "pergjigjja1");
+    answer1Field.setAttribute('placeholder', "Shkruaj përgjigjen");
     answer2Field.setAttribute('id', String(questionNum) + "a2");
     answer2Field.setAttribute('type', 'text');
+    answer2Field.setAttribute('class', "pergjigjja2");
+    answer2Field.setAttribute('placeholder', "Shkruaj përgjigjen");
     answer3Field.setAttribute('id', String(questionNum) + "a3");
     answer3Field.setAttribute('type', 'text');
+    answer3Field.setAttribute('class', "pergjigjja3");
+    answer3Field.setAttribute('placeholder', "Shkruaj përgjigjen");
     answer4Field.setAttribute('id', String(questionNum) + "a4");
     answer4Field.setAttribute('type', 'text');
+    answer4Field.setAttribute('class', "pergjigjja4");
+    answer4Field.setAttribute('placeholder', "Shkruaj përgjigjen");
     correctField.setAttribute('id', 'correct' + String(questionNum));
     correctField.setAttribute('type', 'number');
+    correctField.setAttribute('class', 'correct');
+    correctField.setAttribute('min', '1');
+    correctField.setAttribute('max', '4');
     
     newQuestionDiv.setAttribute('id', 'question-field');//Sets class of div
     
@@ -72,15 +84,15 @@ function addQuestion(){
     newQuestionDiv.appendChild(questionField);
     newQuestionDiv.appendChild(document.createElement('br'));
     newQuestionDiv.appendChild(document.createElement('br'));
-    newQuestionDiv.appendChild(answer1Label);
+    //newQuestionDiv.appendChild(answer1Label);
     newQuestionDiv.appendChild(answer1Field);
-    newQuestionDiv.appendChild(answer2Label);
+    //newQuestionDiv.appendChild(answer2Label);
     newQuestionDiv.appendChild(answer2Field);
     newQuestionDiv.appendChild(document.createElement('br'));
     newQuestionDiv.appendChild(document.createElement('br'));
-    newQuestionDiv.appendChild(answer3Label);
+    //newQuestionDiv.appendChild(answer3Label);
     newQuestionDiv.appendChild(answer3Field);
-    newQuestionDiv.appendChild(answer4Label);
+    //newQuestionDiv.appendChild(answer4Label);
     newQuestionDiv.appendChild(answer4Field);
     newQuestionDiv.appendChild(document.createElement('br'));
     newQuestionDiv.appendChild(document.createElement('br'));
@@ -95,8 +107,8 @@ function addQuestion(){
 
 //Called when user wants to exit quiz creator
 function cancelQuiz(){
-    if (confirm("Are you sure you want to exit? All work will be DELETED!")) {
-        window.location.href = "../";
+    if (confirm("A jeni të sigurt që dëshironi të largoheni? E gjithë puna e deritanishme do të FSHIHET!")) {
+        window.location.href = "../../game/";
     }
 }
 
@@ -106,7 +118,7 @@ socket.on('startGameFromCreator', function(data){
 
 function randomColor(){
     
-    var colors = ['#4CAF50', '#f94a1e', '#3399ff', '#ff9933'];
+    
     var randomNum = Math.floor(Math.random() * 4);
     return colors[randomNum];
 }

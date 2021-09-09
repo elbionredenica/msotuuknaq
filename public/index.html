@@ -21,28 +21,36 @@
         <center> 
         
             <div class="maindiv">
+                
                 <div class="blankpart">
-                    
+                    <div id="particles-js"></div>
                 </div>
+                <!-- </div> -->
                 <br>
                 <div class="loginbackground">
-                    <h1> Welcome to M'so tu u knaq</h1>
-                    <div id="firebaseui-auth-container"></div>
-                    <h3>ose</h3>
-                    <button class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-phone firebaseui-id-idp-button guestBtn" onclick="AnonAuth()">Vazhdo si "Guest"</button>
+                    <img src="img/2.png" alt="" style="width: 300px; height: 300px;">
+                    <div id="firebaseui-auth-container"></div><br>
+                    <button class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-phone firebaseui-id-idp-button guestBtn " onclick="AnonAuth()">Vazhdo si Guest</button>
+                
                 </div>
-    
+                
             </div>
     
         </center>
-    <!-- </div> -->
+    <!-- </div> --> 
     <script src="./authentication/firebase.js"></script>
     <script src="./authentication/login.js"></script>
-   
+    <script src="./js/libs/particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', './js/libs/particlesjs-config.json', function() {
+            console.log('callback - particles.js config loaded');
+        });
+    </script>
 </body>
 <style>
   body {
     justify-content: center;
+    background-color:  #134e9e;
     color: white;
     overflow: hidden;
 }
@@ -61,16 +69,8 @@
 
   .blankpart {
       width: 100%;
-      height: 20%;
+      height: 5%;
   }
-  .loginbackground {
-    width: 100%;
-    height: 80%;
-    background-color: pink;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-  }
-
   #firebaseui-auth-container {
     padding: 20px;
     

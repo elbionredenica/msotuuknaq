@@ -5,20 +5,29 @@
         <link rel = "stylesheet" href = "../css/host.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <button id = "cancel" onclick = "endGame()">Cancel Game</button>
-        <h2 id = "title">Join this Game using the Game Pin: </h2>
+        <div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
+        <button id = "cancel" onclick = "endGame()"><i class="fas fa-window-close"></i></button>
+        <h2 id = "title">Hyni në lojë duke përdorur kodin: </h2>
         <h1 id = "gamePinText"></h1>
-        <textarea style = "width: 700px; height: 500px;" readonly id = 'players'></textarea>
+        <textarea style = "width: 700px; height: 500px;" readonly id = 'players' class="audia4"></textarea>
         <br>
-        <button id = 'start' onclick = "startGame()">Start Game</button>
+        <button id = 'start' onclick = "startGame()">Fillo Lojën!</button>
         <br>
         <br>
         <script src = "../socket.io/socket.io.js"></script>
         <script src = "../js/libs/jqueryLibrary.js"></script>
         <script src = "../js/libs//deparam.js"></script>
         <script src = "../js/host.js"></script>
+        <script src="../js/libs/particles.js"></script>
+        <script>
+            
+            particlesJS.load('particles-js', '../js/libs/particlesjs-config.json', function() {
+                console.log('callback - particles.js config loaded');
+            });
+        </script>
     </body>
 </html>
 

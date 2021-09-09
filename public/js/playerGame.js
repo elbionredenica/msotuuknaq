@@ -14,6 +14,8 @@ socket.on('connect', function() {
     document.getElementById('answer2').style.visibility = "visible";
     document.getElementById('answer3').style.visibility = "visible";
     document.getElementById('answer4').style.visibility = "visible";
+    document.getElementById('message').style.display = "none";
+    document.getElementById('backbtn').style.display = "none";
 });
 
 socket.on('noGameFound', function(){
@@ -32,7 +34,7 @@ function answerSubmitted(num){
         document.getElementById('answer3').style.visibility = "hidden";
         document.getElementById('answer4').style.visibility = "hidden";
         document.getElementById('message').style.display = "block";
-        document.getElementById('message').innerHTML = "Answer Submitted! Waiting on other players...";
+        document.getElementById('message').innerHTML = "Përgjigja u dha! Duke pritur të tjerët...";
         
     }
 }
@@ -48,11 +50,11 @@ socket.on('questionOver', function(data){
     if(correct == true){
         document.body.style.backgroundColor = "#4CAF50";
         document.getElementById('message').style.display = "block";
-        document.getElementById('message').innerHTML = "Correct!";
+        document.getElementById('message').innerHTML = "E SAKTË!";
     }else{
         document.body.style.backgroundColor = "#f94a1e";
         document.getElementById('message').style.display = "block";
-        document.getElementById('message').innerHTML = "Incorrect!";
+        document.getElementById('message').innerHTML = "E PASAKTË!";
     }
     document.getElementById('answer1').style.visibility = "hidden";
     document.getElementById('answer2').style.visibility = "hidden";
@@ -62,7 +64,7 @@ socket.on('questionOver', function(data){
 });
 
 socket.on('newScore', function(data){
-    document.getElementById('scoreText').innerHTML = "Score: " + data;
+    document.getElementById('scoreText').innerHTML = data;
 });
 
 socket.on('nextQuestionPlayer', function(){
@@ -85,19 +87,24 @@ socket.on('hostDisconnect', function(){
 socket.on('playerGameData', function(data){
    for(var i = 0; i < data.length; i++){
        if(data[i].playerId == socket.id){
-           document.getElementById('nameText').innerHTML = "Name: " + data[i].name;
-           document.getElementById('scoreText').innerHTML = "Score: " + data[i].gameData.score;
+           document.getElementById('nameText').innerHTML = data[i].name;
+           document.getElementById('scoreText').innerHTML =  data[i].gameData.score;
        }
    }
 });
 
 socket.on('GameOver', function(){
-    document.body.style.backgroundColor = "#FFFFFF";
+    document.body.style.backgroundColor = "#134e9e";
     document.getElementById('answer1').style.visibility = "hidden";
     document.getElementById('answer2').style.visibility = "hidden";
     document.getElementById('answer3').style.visibility = "hidden";
     document.getElementById('answer4').style.visibility = "hidden";
     document.getElementById('message').style.display = "block";
-    document.getElementById('message').innerHTML = "GAME OVER";
+    document.body.style.backgroundColor = "none";
+    document.getElementById('message').innerHTML = "LOJA PËRFUNDOI!";
+    document.getElementById('backbtn').style.display = "block";
 });
 
+function BackBtn() {
+    window.location.href = "../../game/"
+}

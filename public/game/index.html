@@ -7,44 +7,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
-    <body>
+    <body><div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
         <div class="maindiv">
+            
+            
+            <button id = "signOut" onclick="logOut()" class="logoutbtn"><i class="fas fa-sign-out-alt"></i></button>
 
-            <div class="bottomdiv">
-    
-                <div class="topdiv">
-    
-                </div>
-    
-                <div class="codeinputform"><br><br><br><br><br><br>
-                    <h1 id = "title">Join a Game</h1>
-        <form action="/player/">
-                <div class="form-field">
-                    <label id = "label">Display Name</label>
-                    <input id = "name" type = "text" name="name" autofocus/>
-                </div>
-                <br>
-                <div class="form-field">
-                    <label id = "label">Game Pin</label>
-                    <input id = "pin" type="number" name="pin"/>
-                </div>
-                <br>
-                <div class="form-field">
-                    <button id = "joinButton">Join</button>
-                </div>
-        </form>
-        <br/>
-        <center><a href = "/create/" id = "host">Click here to host a Kahoot!</a></center>
-        <button id = "signOut" onclick="logOut()">Sign Out</button>
+                <div class="codeinputform">
+                    <h1 id = "title">Kyçu në lojë</h1>
+
+                <form action="/player/">
+                        
+                        <div class="form-field">
+                            <label id = "label">Emri juaj</label>
+                            <input id = "name" type = "text" name="name" autofocus/>
+                        </div>
+                        <br>
+                        <div class="form-field">
+                            <label id = "label">Kodi i lojës</label>
+                            <input id = "pin" type="number" name="pin"/>
+                        </div>
+                        <br>
+                        <div class="form-field">
+                            <button id = "joinButton">Kyçu</button>
+                        </div>
+                        <center>
+                        <a href = "../create/quiz-creator/" id = "host"></a></center>
+                        </center>
+                </form>
+
                 </div>
             </div>
-        </div>
+
         
        
         <script src="../authentication/firebase.js"></script>
         <script src="../authentication/login.js"></script>
         <script src="../authentication/main.js"></script>
+        <script src="../js/libs/particles.js"></script>
+        <script>
+            
+            particlesJS.load('particles-js', '../js/libs/particlesjs-config.json', function() {
+                console.log('callback - particles.js config loaded');
+            });
+
+            
+            
+
+            
+        </script>
         
     </body>
 </html>

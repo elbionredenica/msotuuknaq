@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+* {
+    font-family: 'Bubblegum Sans', cursive;
+}
+
 body {
+    background-color: #134e9e;
     justify-content: center;
     color: white;
     overflow: hidden;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 .form-field {
@@ -11,7 +18,6 @@ body {
 }
 
 #title{
-    font-family: 'Raleway', sans-serif;
     text-align: center;
     font-size: 50px;
     color: white;
@@ -20,7 +26,6 @@ body {
     display: block;
     text-align: center;
     font-size: 25px;
-    font-family: 'Raleway', sans-serif;
     color: white;
 }
 #host{
@@ -31,7 +36,7 @@ body {
     text-decoration:underline;
 }
 #joinButton{
-    width: 50%;
+    width: 29%;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -43,32 +48,24 @@ body {
     margin-right: auto;
     margin-left: auto;
     font-size: 20px;
-    background-color: #3A3B3A;
-    font-family: 'Raleway', sans-serif;
+    border-radius: 50px;
+    height: 60px;
 }
 
 .maindiv {
     width: 1920px;
     height: 1080px;
-    margin: 0%;
+    margin: 0;
     padding: 0%;
     display: block;
-    justify-content: center;
+    justify-content: flex-end;
+    text-align: right;
 }
-.topdiv {
-    width: 100%;
-    height: 15%;
-    background-color: white;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    justify-content: center;
+
+.codeinputform {
+    margin-top: 10%;
 }
-.bottomdiv {
-    width: 100%;
-    height: 100%;
-    background-color: #134e9e;
-    justify-content: center;
-}
+
 input {
     width: 550px;
     height: 60px;
@@ -82,11 +79,13 @@ input {
     font-size: 20px;
     transition: 0.4s;
 }
+
 input:hover {
     transform: translateY(-3px);
     box-shadow: 0 14px 32px 0 rgba(0, 0, 0, 0.3);
     opacity: 1;
 }
+
 .button {
     background-color: white;
     border: 1px solid white;
@@ -100,29 +99,40 @@ input:hover {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     transition: all 0.2s ease-out;
-  }
+}
+
   .button:hover {
     background: white;
     color:  #134e9e;
     transform: translateY(-3px);
     box-shadow: 0 14px 32px 0 rgba(0, 0, 0, 0.3);
     opacity: 1;
-  }
-  p {
+}
+
+p {
     position: absolute;
     bottom: 0;
-  }
+}
 
-  /* loginpage */
+.logoutbtn {
+    background-color: transparent;
+    color: white;
+    font-size: 22px;
+    border: none;
+    z-index: 999;
+    margin-top: 20px;
+    margin-right: 20px;
+}
 
-  .blankpart {
-      width: 100%;
-      height: 20%;
-  }
-  .loginbackground {
+.logoutbtn i {
+    font-size: 50px;
+
+}
+
+#particles canvas{
+    position: absolute;
     width: 100%;
-    height: 80%;
-    background-color: pink;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-  }
+    height: 100%;
+    z-index: -1;
+    top: 0px;
+}
