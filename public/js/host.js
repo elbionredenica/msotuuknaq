@@ -30,7 +30,7 @@ function startGame(){
     socket.emit('startGame');
 }
 function endGame(){
-    window.location.href = "/";
+    window.location.href = "../game";
 }
 
 //When server starts the game

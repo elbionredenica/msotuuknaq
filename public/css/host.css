@@ -35,7 +35,7 @@ body {
     background-color: #134e9e;
     justify-content: center;
     color: white;
-    overflow: hidden;
+    overflow: auto;
     margin: 0;
     padding: 0;
 }

@@ -20,16 +20,16 @@
                 <div class="codeinputform">
                     <h1 id = "title">Kyçu në lojë</h1>
 
-                <form action="/player/">
+                <form name="QuizCreator" action="/player/" onsubmit="return formValidation()">
                         
                         <div class="form-field">
                             <label id = "label">Emri juaj</label>
-                            <input id = "name" type = "text" name="name" autofocus/>
+                            <input required id = "name" type = "text" name="name" autofocus/>
                         </div>
                         <br>
                         <div class="form-field">
                             <label id = "label">Kodi i lojës</label>
-                            <input id = "pin" type="number" name="pin"/>
+                            <input required id = "pin" type="number" name="pin"/>
                         </div>
                         <br>
                         <div class="form-field">
@@ -55,7 +55,14 @@
                 console.log('callback - particles.js config loaded');
             });
 
-            
+            function formValidation() {
+                let x = document.getElementById('name').value;
+                let y = document.getElementById('pin').value;
+                if (x == "" || y == "") {
+                    alert("Ju lutem plotësoni të gjitha të gjitha të dhënat!");
+                    return false;
+                }
+            }
             
 
             
