@@ -429,7 +429,7 @@ io.on('connection', (socket) => {
                             num4: fourth.name,
                             num5: fifth.name
                         });
-                        db.db("kahootDB").collection('kahootGames').removeMany()
+                        // db.db("kahootDB").collection('kahootGames').deleteOne();
                     }
                     
                     
