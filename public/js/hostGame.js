@@ -118,7 +118,7 @@ function nextQuestion(){
     
     document.getElementById('playersAnswered').style.display = "block";
     document.getElementById('timerText').style.display = "block";
-    document.getElementById('num').innerHTML = " 20";
+    document.getElementById('num').innerHTML = time;
     socket.emit('nextQuestion'); //Tell server to start new question
 }
 

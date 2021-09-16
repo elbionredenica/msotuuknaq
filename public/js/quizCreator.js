@@ -54,6 +54,7 @@ function addQuestion(){
     questionField.setAttribute('class', 'question');
     questionField.setAttribute('id', 'q' + String(questionNum));
     questionField.setAttribute('type', 'text');
+    questionField.setAttribute('required', '');
     questionField.setAttribute('placeholder', 'Shkruaj pyetjen ' + String(questionNum));
     
     // answer1Label.innerHTML = "Answer 1: ";
@@ -65,22 +66,27 @@ function addQuestion(){
     answer1Field.setAttribute('id', String(questionNum) + "a1");
     answer1Field.setAttribute('type', 'text');
     answer1Field.setAttribute('class', "pergjigjja1");
+    answer1Field.setAttribute('required', "");
     answer1Field.setAttribute('placeholder', "Shkruaj përgjigjen");
     answer2Field.setAttribute('id', String(questionNum) + "a2");
     answer2Field.setAttribute('type', 'text');
     answer2Field.setAttribute('class', "pergjigjja2");
+    answer2Field.setAttribute('required', '');
     answer2Field.setAttribute('placeholder', "Shkruaj përgjigjen");
     answer3Field.setAttribute('id', String(questionNum) + "a3");
     answer3Field.setAttribute('type', 'text');
     answer3Field.setAttribute('class', "pergjigjja3");
+    answer3Field.setAttribute('required', '');
     answer3Field.setAttribute('placeholder', "Shkruaj përgjigjen");
     answer4Field.setAttribute('id', String(questionNum) + "a4");
     answer4Field.setAttribute('type', 'text');
     answer4Field.setAttribute('class', "pergjigjja4");
+    answer4Field.setAttribute('required', '');
     answer4Field.setAttribute('placeholder', "Shkruaj përgjigjen");
     correctField.setAttribute('id', 'correct' + String(questionNum));
     correctField.setAttribute('type', 'number');
     correctField.setAttribute('class', 'correct');
+    correctField.setAttribute('required', '');
     correctField.setAttribute('min', '1');
     correctField.setAttribute('max', '4');
     
