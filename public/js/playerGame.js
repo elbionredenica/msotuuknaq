@@ -76,7 +76,7 @@ socket.on('nextQuestionPlayer', function(){
     document.getElementById('answer3').style.visibility = "visible";
     document.getElementById('answer4').style.visibility = "visible";
     document.getElementById('message').style.display = "none";
-    document.body.style.backgroundColor = "white";
+    document.body.style.backgroundColor = "#134e9e";
     
 });
 

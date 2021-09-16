@@ -423,11 +423,11 @@ io.on('connection', (socket) => {
                         }
                         
                         io.to(game.pin).emit('GameOver', {
-                            num1: first.name,
-                            num2: second.name,
-                            num3: third.name,
-                            num4: fourth.name,
-                            num5: fifth.name
+                            num1: first.name + " - " + first.score,
+                            num2: second.name + " - " + second.score,
+                            num3: third.name + " - " + third.score,
+                            num4: fourth.name + " - " + fourth.score,
+                            num5: fifth.name + " - " + fifth.score
                         });
                         // db.db("kahootDB").collection('kahootGames').deleteMany();
                     }
