@@ -5,18 +5,30 @@ socket.on('connect', function(){
 });
 
 socket.on('gameNamesData', function(data){
-    for(var i = 0; i < Object.keys(data).length; i++){
-        var div = document.getElementById('game-list');
-        var button = document.createElement('button');
-        
-        button.innerHTML = data[i].name;
-        button.setAttribute('onClick', "startGame('" + data[i].id + "')");
-        button.setAttribute('id', 'gameButton');
-        
-        div.appendChild(button);
-        div.appendChild(document.createElement('br'));
-        div.appendChild(document.createElement('br'));
-    }
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            console.log(user.uid)
+            for(var i = 0; i < Object.keys(data).length; i++){
+                if (user.uid == data[i].userID) {
+                    
+                    var div = document.getElementById('game-list');
+                    var button = document.createElement('button');
+                
+                    button.innerHTML = data[i].name;
+                    button.setAttribute('onClick', "startGame('" + data[i].id + "')");
+                    button.setAttribute('id', 'gameButton');
+                
+                    div.appendChild(button);
+                    div.appendChild(document.createElement('br'));
+                    div.appendChild(document.createElement('br'));
+                } else {
+                    console.log("test")
+                }
+                
+            }
+        }
+    });
+    
 });
 
 function startGame(data){

@@ -4,15 +4,22 @@
         <title>Mso tu u knaq</title>
         <link rel="stylesheet" href = "../css/create.css">
         <link rel="icon" href="../img/1.png">
+        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
-        <a id = "back"href = "../"><i class="fas fa-arrow-alt-circle-left"></i></a>
+        <a id = "back"href = "../game/"><i class="fas fa-arrow-alt-circle-left"></i></a>
         <h1 id = "title">Fillo një kuiz të ri</h1>
         <h4 id = "subtitle">Zgjidh ndonjë prej kuizeve apo <a id = "link" href = "quiz-creator/">krijo tëndin!</a></h4>
+        <div id = "game-list">
+            
+        </div>
         
-        
+        <script src="../../authentication/firebase.js"></script>
+        <script src="../../authentication/login.js"></script>
+        <script src="../../authentication/main.js"></script>
         <script src = "../socket.io/socket.io.js"></script>
         <script src = "../js/create.js"></script>
         <script src="../js/libs/particles.js"></script>

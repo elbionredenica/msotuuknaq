@@ -57,3 +57,38 @@ h3 {
     margin: 25px;
     padding: 0
 }
+
+#audioPlayBtn {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    position: absolute;
+    margin: 2%;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    flex: 50%
+}
+
+#audioStopBtn {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    position: absolute;
+    margin: 0;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    flex: 50%;
+}
+
+.volume {
+    display: inline-flex;
+    justify-content: center;
+    margin: 0;
+    padding: 25px;
+    top: 0;
+    position: relative;
+}

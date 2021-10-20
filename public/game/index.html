@@ -14,7 +14,9 @@
     <body><div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
         <div class="maindiv">
             
-            
+            <div class="volume"><button onclick="playAudio()" id="audioPlayBtn"><i class="fas fa-volume-up"></i></button><button onclick="stopAudio()" id="audioStopBtn"><i class="fas fa-volume-mute"></i></button></div>
+            <audio src="https://www.mboxdrive.com/royalty-free-sports-competition-music-epic-background-music-royalty-free-by-music4video.mp3" id="my_audio" loop="loop" autoplay="autoplay"></audio>
+                
             <button id = "signOut" onclick="logOut()" class="logoutbtn"><i class="fas fa-sign-out-alt"></i></button>
 
                 <div class="codeinputform">
@@ -36,7 +38,7 @@
                             <button id = "joinButton">Kyçu</button>
                         </div>
                         <center>
-                        <a href = "../create/quiz-creator/" id = "host"></a></center>
+                        <a href = "../create/" id = "host"></a></center>
                         </center>
                 </form>
 
@@ -64,6 +66,24 @@
                 }
             }
             
+            window.onload=function(){ 
+            document.getElementById("my_audio").volume = 0.1;
+            $("#audioPlayBtn").css("display", "none");
+            $("#audioStopBtn").css("display", "initial");
+        }
+        
+
+        function stopAudio() {
+            document.getElementById("my_audio").volume = 0.1;
+            document.getElementById("my_audio").play(); 
+            $("#audioPlayBtn").css("display", "initial");
+            $("#audioStopBtn").css("display", "none");
+        }
+        function playAudio() {
+            document.getElementById("my_audio").volume = 0;
+            $("#audioPlayBtn").css("display", "none");
+            $("#audioStopBtn").css("display", "initial");
+        }
 
             
         </script>
