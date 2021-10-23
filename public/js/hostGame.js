@@ -4,7 +4,7 @@ var params = jQuery.deparam(window.location.search); //Gets the id from url
 
 var timer;
 
-var time = 39;
+var time = localStorage.getItem('timeLeft');
 
 //When host connects to server
 socket.on('connect', function() {
@@ -123,7 +123,7 @@ function nextQuestion(){
 }
 
 function updateTimer(){
-    time = 39;
+    time = localStorage.getItem('timeLeft');
     timer = setInterval(function(){
         time -= 1;
         document.getElementById('num').textContent = " " + time;

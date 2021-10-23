@@ -1,6 +1,5 @@
 var socket = io();
 var params = jQuery.deparam(window.location.search);
-
 //When host connects to server
 socket.on('connect', function() {
 
@@ -27,7 +26,20 @@ socket.on('updatePlayerLobby', function(data){
 
 //Tell server to start game if button is clicked
 function startGame(){
-    socket.emit('startGame');
+    var timeInput = prompt("Shënoni kohëzgjatjen për pyetje (në sekonda)");
+    localStorage.setItem('timeLeft', timeInput);
+    if (isNaN(timeInput)) {
+        alert("Ju lutem shënoni numër!")
+    }
+      else if (timeInput == "") {
+        alert("Ju lutem plotësoni të dhënat!");
+    } else if (timeInput == null) {
+        alert("Ju lutem plotësoni të dhënat!");
+    } 
+    else {
+        socket.emit('startGame');
+    }
+    
 }
 function endGame(){
     window.location.href = "../game";
