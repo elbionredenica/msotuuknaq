@@ -20,8 +20,10 @@ function updateDatabase(){
                         var answer3 = document.getElementById(i + 'a3').value;
                         var answer4 = document.getElementById(i + 'a4').value;
                         var correct = document.getElementById('correct' + i).value;
+                        var pictureURL = document.getElementById("questionImage").src;
                         var answers = [answer1, answer2, answer3, answer4];
-                        questions.push({"question": question, "answers": answers, "correct": correct})
+                        
+                        questions.push({"question": question, "answers": answers, "correct": correct, "pictureURL": pictureURL})
             }
     
                     var quiz = {id: 0, "name": name, "questions": questions, "userID": userID};
@@ -105,6 +107,7 @@ function addQuestion(){
     newQuestionDiv.appendChild(questionField);
     newQuestionDiv.appendChild(document.createElement('br'));
     newQuestionDiv.appendChild(document.createElement('br'));
+    newQuestionDiv.innerHTML += '<div class="drag-area" id="drag-area"><div class="icon"><i class="fas fa-cloud-upload-alt"></i></div><header>Drag & Drop to Upload File</header><span>OR</span><button id="button">Browse File</button><input type="file" hidden id="image"' + questionNum + '></div><br><br>'
     //newQuestionDiv.appendChild(answer1Label);
     newQuestionDiv.appendChild(answer1Field);
     //newQuestionDiv.appendChild(answer2Label);
@@ -148,6 +151,7 @@ function setBGColor(){
     var randColor = randomColor();
     document.getElementById('question-field').style.backgroundColor = randColor;
 }
+
 
 
 

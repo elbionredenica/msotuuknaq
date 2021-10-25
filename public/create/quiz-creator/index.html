@@ -22,6 +22,7 @@
             <label> Shëno kohën për pyetje </label>
             <input type="number" id="timeInput" name="timeLeft" required placeholder="" class="timeInput" value=""> -->
         </div>
+        
         <br>
         <br>
         <div id = "allQuestions">
@@ -29,7 +30,15 @@
                 <input required class = "question" id = "q1" type = "text" placeholder="Shkruaj pyetjen" autofocus/>
                 <br>
                 <br>
-            
+                <div class="drag-area" id="drag-area">
+                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <header>Drag & Drop to Upload File</header>
+                    <span>OR</span>
+                    <button id="button">Browse File</button>
+                    <input type="file" hidden id="image">
+                  </div>
+                  <br>
+                  <br>
                 <input required id = "1a1" type = "text" class="pergjigjja1" placeholder="Shkruaj përgjigjen" autofocus/>
                 
                 <input required id = "1a2" type = "text" class="pergjigjja2" placeholder="Shkruaj përgjigjen" autofocus/>
@@ -58,6 +67,7 @@
         <script src="../../authentication/firebase.js"></script>
         <script src="../../authentication/login.js"></script>
         <script src="../../authentication/main.js"></script>
+        <script src = "../../js/fileUploader.js"></script>
         <script src = "../../socket.io/socket.io.js"></script>
         <!-- <script src = "../../js/hostGame.js"></script> -->
         <script src = "../../js/quizCreator.js"></script>

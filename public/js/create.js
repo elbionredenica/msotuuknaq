@@ -7,7 +7,7 @@ socket.on('connect', function(){
 socket.on('gameNamesData', function(data){
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-            console.log(user.uid)
+            // console.log(user.uid)
             for(var i = 0; i < Object.keys(data).length; i++){
                 if (user.uid == data[i].userID) {
                     

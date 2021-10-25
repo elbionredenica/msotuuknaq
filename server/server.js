@@ -98,6 +98,7 @@ io.on('connection', (socket) => {
                     var answer3 = res[0].questions[0].answers[2];
                     var answer4 = res[0].questions[0].answers[3];
                     var correctAnswer = res[0].questions[0].correct;
+                    var quizImage = res[0].questions[0].pictureURL;
                     
                     socket.emit('gameQuestions', {
                         q1: question,
@@ -105,6 +106,7 @@ io.on('connection', (socket) => {
                         a2: answer2,
                         a3: answer3,
                         a4: answer4,
+                        pictureURL: quizImage,
                         correct: correctAnswer,
                         playersInGame: playerData.length
                     });

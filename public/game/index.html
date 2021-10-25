@@ -54,7 +54,7 @@
         <script>
             
             particlesJS.load('particles-js', '../js/libs/particlesjs-config.json', function() {
-                console.log('callback - particles.js config loaded');
+                // console.log('callback - particles.js config loaded');
             });
 
             function formValidation() {
@@ -67,7 +67,7 @@
             }
             
             window.onload=function(){ 
-            document.getElementById("my_audio").volume = 0.1;
+            document.getElementById("my_audio").volume = 0;
             $("#audioPlayBtn").css("display", "none");
             $("#audioStopBtn").css("display", "initial");
         }

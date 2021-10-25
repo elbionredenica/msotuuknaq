@@ -40,7 +40,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
     firebase.auth().signInAnonymously()
   .then((user) => {
     window.location.replace('../game/index.html');
-    console.log(user.uid);
+    // console.log(user.uid);
   })
   .catch((error) => {
     var errorCode = error.code;

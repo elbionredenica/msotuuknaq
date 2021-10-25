@@ -19,11 +19,13 @@ socket.on('noGameFound', function(){
 });
 
 socket.on('gameQuestions', function(data){
+    document.getElementById('imageQuiz').src = data.pictureURL;
     document.getElementById('question').innerHTML = data.q1;
     document.getElementById('answer1').innerHTML = data.a1;
     document.getElementById('answer2').innerHTML = data.a2;
     document.getElementById('answer3').innerHTML = data.a3;
     document.getElementById('answer4').innerHTML = data.a4;
+    
     var correctAnswer = data.correct;
     document.getElementById('playersAnswered').innerHTML = "Players Answered 0 / " + data.playersInGame;
     updateTimer();
@@ -133,6 +135,7 @@ function updateTimer(){
     }, 1000);
 }
 socket.on('GameOver', function(data){
+    document.getElementById('imageQuiz').style.display = "none";
     document.getElementById('nextQButton').style.display = "none";
     document.getElementById('square1').style.display = "none";
     document.getElementById('square2').style.display = "none";

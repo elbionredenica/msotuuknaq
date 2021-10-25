@@ -16,20 +16,29 @@
         <h4 id = "playersAnswered">Të përgjigjur: 0 / x</h4>
         <h3 id = "timerText">Koha e mbetur:<span id = "num"></span></h3>
         
-        
+
         <div class = "square" id = "square1"></div>
         <div class = "square" id = "square2"></div>
         <div class = "square" id = "square3"></div>
         <div class = "square" id = "square4"></div>
-        
+        <center><img id="imageQuiz" class="imageQuiz" src="" alt="" height="500" width="800" style="background-size: contain;"></center>
         <h2 id = "question">Pyetja</h2>
-        <h3 id = "answer1">Përgjigja</h3>
-        <br>
-        <h3 id = "answer2">Përgjigja</h3>
-        <br>
-        <h3 id = "answer3">Përgjigja</h3>
-        <br>
-        <h3 id = "answer4">Përgjigja</h3>
+        <div style="display: block;">
+            <div style="display: flex">
+                <h3 id = "answer1">Përgjigja</h3>
+                <br>
+                <h3 id = "answer2">Përgjigja</h3>
+                <br>
+            </div>
+            <div style="display: flex">
+                <h3 id = "answer3">Përgjigja</h3>
+                <br>
+                <h3 id = "answer4">Përgjigja</h3>
+            </div>
+        </div>
+       
+        
+        
         
         <br>
         <button onclick = "nextQuestion()" id = "nextQButton">Pyetja tjetër</button>
