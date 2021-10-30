@@ -20,11 +20,20 @@ function updateDatabase(){
                         var answer3 = document.getElementById(i + 'a3').value;
                         var answer4 = document.getElementById(i + 'a4').value;
                         var correct = document.getElementById('correct' + i).value;
-                        var pictureURL = document.getElementById("questionImage").src;
+                        var pathURL = document.getElementById("fileup" + i);
+
+                        let pictureURL = "";
+                        let file = pathURL.files[0];  
+                        let reader = new FileReader();  
+                        reader.onloadend = function() {  
+                            pictureURL = reader.result;  
+                            console.log(pictureURL)
+                        }  
+                        reader.readAsDataURL(file); 
                         var answers = [answer1, answer2, answer3, answer4];
                         
                         questions.push({"question": question, "answers": answers, "correct": correct, "pictureURL": pictureURL})
-            }
+                    }
     
                     var quiz = {id: 0, "name": name, "questions": questions, "userID": userID};
                     socket.emit('newQuiz', quiz);
@@ -35,6 +44,7 @@ function updateDatabase(){
             
         }
 }
+// newQuestionDiv.innerHTML += '<input type="file" class="filepond" id="fileup" value=""><img src="" height="200" alt="Image preview..." id="previewImg"><br><br>'
 
 function addQuestion(){
     questionNum += 1;
@@ -46,6 +56,7 @@ function addQuestion(){
     var questionLabel = document.createElement('label');
     var questionField = document.createElement('input');
     
+    var inputImage = document.createElement('input');
     // var answer1Label = document.createElement('label');
     var answer1Field = document.createElement('input');
     
@@ -67,6 +78,10 @@ function addQuestion(){
     questionField.setAttribute('type', 'text');
     questionField.setAttribute('required', '');
     questionField.setAttribute('placeholder', 'Shkruaj pyetjen ' + String(questionNum));
+
+    inputImage.setAttribute("type", "file");
+    inputImage.setAttribute("class", "filepond");
+    inputImage.setAttribute("id", "fileup" + String(questionNum));
     
     // answer1Label.innerHTML = "Answer 1: ";
     // answer2Label.innerHTML = " Answer 2: ";
@@ -107,7 +122,9 @@ function addQuestion(){
     newQuestionDiv.appendChild(questionField);
     newQuestionDiv.appendChild(document.createElement('br'));
     newQuestionDiv.appendChild(document.createElement('br'));
-    newQuestionDiv.innerHTML += '<div class="drag-area" id="drag-area"><div class="icon"><i class="fas fa-cloud-upload-alt"></i></div><header>Drag & Drop to Upload File</header><span>OR</span><button id="button">Browse File</button><input type="file" hidden id="image"' + questionNum + '></div><br><br>'
+    newQuestionDiv.appendChild(inputImage);
+    newQuestionDiv.appendChild(document.createElement('br'));
+    newQuestionDiv.appendChild(document.createElement('br'));
     //newQuestionDiv.appendChild(answer1Label);
     newQuestionDiv.appendChild(answer1Field);
     //newQuestionDiv.appendChild(answer2Label);
@@ -140,24 +157,24 @@ socket.on('startGameFromCreator', function(data){
     window.location.href = "../../host/?id=" + data;
 });
 
-function randomColor(){
-    
-    
-    var randomNum = Math.floor(Math.random() * 4);
-    return colors[randomNum];
-}
-
-function setBGColor(){
-    var randColor = randomColor();
-    document.getElementById('question-field').style.backgroundColor = randColor;
-}
+//Drag and drop file uploader
+//selecting all required elements
 
 
 
 
 
-
-
-
-
-
+// function previewFile(i) {
+//     const preview = document.getElementById('previewImg');
+//     const file = document.querySelector('input[type=file]').files[i];
+//     const reader = new FileReader();
+  
+//     reader.addEventListener("load", function () {
+//       // convert image file to base64 string
+//       preview.src = reader.result;
+//     }, false);
+  
+//     if (file) {
+//       reader.readAsDataURL(file);
+//     }
+//   }

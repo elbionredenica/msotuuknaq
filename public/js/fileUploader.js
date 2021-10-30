@@ -2,11 +2,11 @@
 //selecting all required elements
 const dropArea = document.querySelector(".drag-area"),
 dragText = dropArea.querySelector("header"),
-button = document.getElementById("button"),
+button = document.querySelector("button"),
 input = dropArea.querySelector("input");
 let file; //this is a global variable and we'll use it inside multiple functions
 
-button.onclick = ()=>{
+function UploadBtn() {
   input.click(); //if user click on the button then the input also clicked
 }
 
